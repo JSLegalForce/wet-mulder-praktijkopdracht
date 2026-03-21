@@ -7,142 +7,61 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800;900&family=Source+Serif+4:wght@400;600&display=swap" rel="stylesheet">
   <style>
-    :root {
-      --blauw: #1a2a5e;
-      --blauw-mid: #243580;
-      --blauw-licht: #2d4099;
-      --zilver: #8a9ab5;
-      --wit: #ffffff;
-      --grijs-licht: #f2f4f8;
-      --grijs-mid: #dde2ef;
-      --tekst: #1a2a5e;
-      --tekst-mid: #4a5578;
-      --groen: #1a7a4a;
-      --groen-licht: #e6f4ed;
-      --shadow: 0 4px 24px rgba(26,42,94,0.10);
-      --radius: 12px;
-    }
+    :root { --blauw: #1a2a5e; --blauw-mid: #243580; --blauw-licht: #2d4099; --zilver: #8a9ab5; --wit: #ffffff; --grijs-licht: #f2f4f8; --grijs-mid: #dde2ef; --tekst: #1a2a5e; --tekst-mid: #4a5578; --groen: #1a7a4a; --groen-licht: #e6f4ed; --shadow: 0 4px 24px rgba(26,42,94,0.10); --radius: 12px; }
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { font-size: 16px; }
     body { font-family: 'Outfit', sans-serif; background: var(--grijs-licht); color: var(--tekst); min-height: 100vh; display: flex; flex-direction: column; }
-
-    /* HEADER */
     .quiz-header { background: var(--blauw); }
     .header-inner { display: flex; align-items: center; justify-content: center; gap: 14px; padding: 16px 24px; }
     .header-schild { width: 36px; height: 42px; flex-shrink: 0; }
     .logo-tekst { font-weight: 700; font-size: 1.35rem; letter-spacing: 0.04em; color: var(--wit); }
     .header-lijn { height: 3px; background: linear-gradient(90deg, transparent, var(--zilver), transparent); opacity: 0.4; }
-    .header-sub { text-align: center; padding: 0 24px 14px; font-size: 0.78rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
-
-    /* WRAPPER */
+    .header-sub { text-align: center; padding: 10px 24px 18px; font-size: 0.78rem; color: rgba(255,255,255,0.55); letter-spacing: 0.08em; text-transform: uppercase; font-weight: 500; }
     .wrapper { flex: 1; display: flex; flex-direction: column; align-items: center; padding: 28px 16px 40px; max-width: 740px; margin: 0 auto; width: 100%; }
-
-    /* CASUS CARD */
-    .casus-card {
-      background: var(--blauw);
-      border-radius: var(--radius);
-      padding: 24px 32px;
-      margin-bottom: 24px;
-      width: 100%;
-      color: white;
-    }
+    .casus-card { background: var(--blauw); border-radius: var(--radius); padding: 24px 32px; margin-bottom: 24px; width: 100%; color: white; }
     .casus-label { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--zilver); margin-bottom: 8px; }
     .casus-titel { font-weight: 800; font-size: 1.2rem; color: white; margin-bottom: 10px; }
     .casus-tekst { font-size: 0.92rem; color: rgba(255,255,255,0.8); line-height: 1.65; }
-
-    /* VOORTGANG */
     .voortgang-wrapper { width: 100%; margin-bottom: 18px; }
     .voortgang-header { display: flex; justify-content: space-between; margin-bottom: 8px; }
     .voortgang-label { font-weight: 600; font-size: 0.85rem; color: var(--tekst-mid); }
     .voortgang-track { height: 5px; background: var(--grijs-mid); border-radius: 99px; overflow: hidden; }
     .voortgang-balk { height: 100%; background: linear-gradient(90deg, var(--blauw), var(--zilver)); border-radius: 99px; transition: width 0.4s ease; width: 0%; }
-
-    /* VRAAG CARD */
     .vraag-card { background: var(--wit); border-radius: var(--radius); box-shadow: var(--shadow); padding: 32px 36px; border-top: 4px solid var(--blauw); width: 100%; margin-bottom: 16px; }
     .vraag-nummer { display: inline-block; background: var(--blauw); color: var(--zilver); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 12px; border-radius: 4px; margin-bottom: 14px; }
     .vraag-tekst { font-family: 'Source Serif 4', serif; font-size: 1.05rem; line-height: 1.7; color: var(--tekst); margin-bottom: 20px; }
-
-    /* TEXTAREA */
-    .antwoord-input {
-      width: 100%; min-height: 120px; padding: 14px 16px;
-      border: 2px solid var(--grijs-mid); border-radius: 8px;
-      font-family: 'Outfit', sans-serif; font-size: 0.95rem;
-      color: var(--tekst); background: var(--wit);
-      resize: vertical; outline: none; transition: border-color 0.2s;
-      line-height: 1.6;
-    }
+    .antwoord-input { width: 100%; min-height: 120px; padding: 14px 16px; border: 2px solid var(--grijs-mid); border-radius: 8px; font-family: 'Outfit', sans-serif; font-size: 0.95rem; color: var(--tekst); background: var(--wit); resize: vertical; outline: none; transition: border-color 0.2s; line-height: 1.6; }
     .antwoord-input:focus { border-color: var(--blauw-licht); background: #f8f9ff; }
     .antwoord-input::placeholder { color: var(--zilver); }
     .antwoord-input:disabled { background: var(--grijs-licht); color: var(--tekst-mid); }
-
-    /* MODELANTWOORD */
-    .modelantwoord {
-      display: none;
-      margin-top: 16px;
-      background: var(--groen-licht);
-      border-left: 4px solid var(--groen);
-      border-radius: 8px;
-      padding: 16px 18px;
-      animation: fadeIn 0.3s ease;
-    }
+    .modelantwoord { display: none; margin-top: 16px; background: var(--groen-licht); border-left: 4px solid var(--groen); border-radius: 8px; padding: 16px 18px; animation: fadeIn 0.3s ease; }
     .modelantwoord.zichtbaar { display: block; }
     @keyframes fadeIn { from { opacity: 0; transform: translateY(6px); } to { opacity: 1; transform: translateY(0); } }
     .modelantwoord-label { font-size: 0.75rem; font-weight: 700; color: var(--groen); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 8px; display: flex; align-items: center; gap: 6px; }
     .modelantwoord-tekst { font-size: 0.92rem; color: #145c38; line-height: 1.65; }
     .modelantwoord-tekst ul { margin-top: 8px; padding-left: 18px; }
     .modelantwoord-tekst li { margin-bottom: 4px; }
-
-    /* KNOPPEN */
     .knop-rij { display: flex; gap: 10px; margin-top: 16px; flex-wrap: wrap; }
-    .knop-controleer {
-      background: var(--blauw); color: var(--wit); border: none;
-      border-radius: 8px; font-family: 'Outfit', sans-serif;
-      font-weight: 700; font-size: 0.95rem; padding: 12px 24px;
-      cursor: pointer; transition: background 0.2s, transform 0.1s;
-    }
+    .knop-controleer { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; cursor: pointer; transition: background 0.2s, transform 0.1s; }
     .knop-controleer:hover { background: var(--blauw-mid); }
     .knop-controleer:active { transform: scale(0.98); }
     .knop-controleer:disabled { background: var(--grijs-mid); color: var(--tekst-mid); cursor: default; }
-
-    .knop-volgende {
-      background: transparent; color: var(--blauw);
-      border: 2px solid var(--blauw); border-radius: 8px;
-      font-family: 'Outfit', sans-serif; font-weight: 700;
-      font-size: 0.95rem; padding: 11px 24px;
-      cursor: pointer; transition: all 0.2s;
-      display: none;
-    }
+    .knop-volgende { background: transparent; color: var(--blauw); border: 2px solid var(--blauw); border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 11px 24px; cursor: pointer; transition: all 0.2s; display: none; }
     .knop-volgende.zichtbaar { display: block; }
     .knop-volgende:hover { background: var(--blauw); color: var(--wit); }
-
-    /* EINDSCHERM */
     .eind-card { background: var(--wit); border-radius: var(--radius); box-shadow: var(--shadow); padding: 48px 36px; border-top: 4px solid var(--groen); width: 100%; text-align: center; }
     .eind-icoon { font-size: 3rem; margin-bottom: 16px; }
     .eind-titel { font-weight: 800; font-size: 1.8rem; color: var(--blauw); margin-bottom: 8px; }
     .eind-tekst { font-size: 1rem; color: var(--tekst-mid); margin-bottom: 32px; line-height: 1.6; }
-    .knop-opnieuw {
-      background: var(--blauw); color: var(--wit); border: none;
-      border-radius: 8px; font-family: 'Outfit', sans-serif;
-      font-weight: 700; font-size: 1rem; padding: 14px 32px;
-      cursor: pointer; transition: background 0.2s;
-    }
+    .knop-opnieuw { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px 32px; cursor: pointer; transition: background 0.2s; }
     .knop-opnieuw:hover { background: var(--blauw-mid); }
-
-    /* SCHERMEN */
     .scherm { display: none; width: 100%; }
     .scherm.actief { display: flex; flex-direction: column; align-items: center; }
-
-    /* FOOTER */
     .quiz-footer { text-align: center; padding: 16px; font-size: 0.75rem; color: var(--tekst-mid); opacity: 0.6; }
-
-    @media (max-width: 560px) {
-      .vraag-card { padding: 22px 18px; }
-      .casus-card { padding: 18px 20px; }
-    }
+    @media (max-width: 560px) { .vraag-card { padding: 22px 18px; } .casus-card { padding: 18px 20px; } }
   </style>
 </head>
 <body>
-
   <header class="quiz-header">
     <div class="header-inner">
       <svg class="header-schild" viewBox="0 0 36 42" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -155,27 +74,17 @@
     <div class="header-lijn"></div>
     <p class="header-sub">Praktijkopdracht — Wet Mulder voor BOA's</p>
   </header>
-
   <main class="wrapper">
-
-    <!-- VRAAGSCHERM -->
     <div id="scherm-vraag" class="scherm actief">
-
       <div class="casus-card">
-        <div class="casus-label">📘 Casus</div>
-        <div class="casus-titel">Fietser op voetpad met mobiele telefoon</div>
-        <div class="casus-tekst">Je bent als BOA werkzaam in de openbare ruimte. Je ziet een fietser op het voetpad rijden terwijl hij zijn mobiele telefoon gebruikt. Je besluit in te grijpen.</div>
+        <div class="casus-label">Casus</div>
+        <div class="casus-titel" id="casus-titel"></div>
+        <div class="casus-tekst" id="casus-tekst"></div>
       </div>
-
       <div class="voortgang-wrapper">
-        <div class="voortgang-header">
-          <span id="voortgang-tekst" class="voortgang-label">Vraag 1 van 10</span>
-        </div>
-        <div class="voortgang-track">
-          <div id="voortgang-balk" class="voortgang-balk"></div>
-        </div>
+        <div class="voortgang-header"><span id="voortgang-tekst" class="voortgang-label">Vraag 1 van 10</span></div>
+        <div class="voortgang-track"><div id="voortgang-balk" class="voortgang-balk"></div></div>
       </div>
-
       <div class="vraag-card">
         <div id="vraag-nummer" class="vraag-nummer">Vraag 1 van 10</div>
         <p id="vraag-tekst" class="vraag-tekst"></p>
@@ -189,75 +98,51 @@
           <button id="knop-volgende" class="knop-volgende" onclick="volgende()">Volgende vraag →</button>
         </div>
       </div>
-
     </div>
-
-    <!-- EINDSCHERM -->
     <div id="scherm-einde" class="scherm">
       <div class="eind-card">
         <div class="eind-icoon">🎓</div>
         <h2 class="eind-titel">Opdracht afgerond!</h2>
-        <p class="eind-tekst">Je hebt alle 10 vragen van de praktijkopdracht doorlopen en de modelantwoorden bekeken. Vergelijk je eigen antwoorden met de modelantwoorden om te zien hoe je het hebt gedaan.</p>
+        <p class="eind-tekst">Je hebt alle 10 vragen doorlopen en de modelantwoorden bekeken. Vergelijk je antwoorden met de modelantwoorden om te zien hoe je het hebt gedaan.</p>
         <button class="knop-opnieuw" onclick="herstart()">Opnieuw beginnen</button>
       </div>
     </div>
-
   </main>
-
   <footer class="quiz-footer">© JS Legal Force — Praktijkopdracht Wet Mulder voor BOA's</footer>
-
   <script>
-    const vragen = [
-      {
-        vraag: "In welke wet zijn de verkeersgedragingen die de fietser heeft gepleegd strafbaar gesteld?",
-        antwoord: "Het Reglement Verkeersregels en Verkeerstekens 1990 (RVV 1990)."
-      },
-      {
-        vraag: "In welke wet is de afhandeling van deze verkeersgedragingen geregeld?",
-        antwoord: "De Wet administratieve handhaving verkeersvoorschriften (WAHV), ook wel de Wet Mulder genoemd."
-      },
-      {
-        vraag: "In welke wet zijn de bevoegdheden vastgelegd die je in deze situatie kunt gebruiken?",
-        antwoord: "De Algemene wet bestuursrecht (Awb)."
-      },
-      {
-        vraag: "Met welke 'pet' (hoedanigheid) treed je in deze situatie op?",
-        antwoord: "Als toezichthouder."
-      },
-      {
-        vraag: "Is de fietser in dit geval een verdachte of een betrokkene?",
-        antwoord: "De fietser is een betrokkene, omdat het gaat om een gedraging die onder de Wet Mulder valt."
-      },
-      {
-        vraag: "Is de fietser verplicht om aan jouw aanwijzing te voldoen en te stoppen?",
-        antwoord: "Ja, als toezichthouder ben je op grond van artikel 5:16 Awb bevoegd om inlichtingen te vorderen en betrokkene te laten stoppen en staande te houden.<br><br><strong>Let op:</strong> overtreding van artikel 34 WAHV kan door een boa niet zelfstandig worden beboet, omdat dit artikel niet in de domeinlijst is opgenomen."
-      },
-      {
-        vraag: "Is de fietser verplicht om zijn identiteitsbewijs ter inzage af te geven?",
-        antwoord: "Ja, op grond van artikel 5:16a Awb mag je het identiteitsbewijs vorderen.<br><br>Bij weigering ontstaat een verdenking van artikel 447e Wetboek van Strafrecht, waardoor betrokkene als verdachte kan worden aangemerkt en verdere strafvorderlijke bevoegdheden kunnen worden toegepast."
-      },
-      {
-        vraag: "Wat moet je de fietser formeel mededelen voordat je een verklaring afneemt?",
-        antwoord: "Je moet mededelen:<ul><li>Voor welke feiten hij een aankondiging van beschikking krijgt</li><li>Dat hij niet tot antwoorden verplicht is</li><li>Dat hij recht heeft op consultatie- en verhoorbijstand (Salduz)</li></ul>"
-      },
-      {
-        vraag: "Welke gegevens zijn van belang om op de bekeuring(en) te noteren?",
-        antwoord: "<ul><li>Verwijzing naar beide beschikkingen (bij meerdere feiten)</li><li>De bijbehorende proces-verbaalnummers</li><li>Reden van wetenschap</li><li>Gedrag en uitlatingen van betrokkene</li><li>Eventuele relevante omstandigheden (bijvoorbeeld bijna-aanrijding)</li></ul>"
-      },
-      {
-        vraag: "Wordt de bekeuring nog inhoudelijk getoetst voordat deze wordt opgelegd?",
-        antwoord: "Nee, de aankondiging van beschikking wordt automatisch door het CJIB verzonden. Er vindt vooraf geen inhoudelijke toetsing plaats door het CJIB of het CVOM.<br><br>Betrokkene kan:<ul><li>Bezwaar maken bij de officier van justitie (CVOM)</li><li>In beroep gaan bij de kantonrechter</li><li>Hoger beroep instellen bij het Gerechtshof Arnhem-Leeuwarden</li></ul>"
-      }
+    const casussen = [
+      { titel: "Casus 1", tekst: "Tijdens je surveillance in het winkelgebied neem je waar dat een fietser over het voetpad rijdt. Je besluit hiertegen op te treden." },
+      { titel: "Casus 2", tekst: "Je bent als BOA werkzaam in de openbare ruimte. Tijdens je surveillance neem je waar dat een fietser op een fatbike rijdt, terwijl hij een mobiele telefoon in zijn hand vasthoudt." },
+      { titel: "Casus 3", tekst: "Je wilt een fietser op een fatbike stilhouden om hem een aankondiging van beschikking te geven voor het vasthouden van een mobiele telefoon tijdens het rijden." },
+      { titel: "Casus 4", tekst: "Je wilt de fietser op de fatbike stilhouden om hem een aankondiging van beschikking te geven voor het vasthouden van een mobiele telefoon tijdens het rijden." },
+      { titel: "Casus 5", tekst: "Je wilt de fietser op de fatbike stilhouden om hem een aankondiging van beschikking te geven voor het vasthouden van een mobiele telefoon tijdens het rijden." },
+      { titel: "Casus 6", tekst: "Je spreekt de fietser op de fatbike, die tijdens het fietsen een mobiele telefoon in zijn hand vasthoudt, aan en vordert dat hij stopt." },
+      { titel: "Casus 7", tekst: "De fietser voldoet aan jouw vordering en stopt." },
+      { titel: "Casus 8", tekst: "Je geeft de fietser een aankondiging van beschikking voor het vasthouden van een mobiele telefoon tijdens het fietsen." },
+      { titel: "Casus 9", tekst: "Je maakt de aankondiging van beschikking op in het systeem." },
+      { titel: "Casus 10", tekst: "De fietser weigert medewerking en toont geen identiteitsbewijs." }
     ];
-
+    const vragen = [
+      { vraag: "In welke wet is deze gedraging strafbaar gesteld?", antwoord: "Het Reglement verkeersregels en verkeerstekens 1990 (RVV 1990)." },
+      { vraag: "In welke wet is de afhandeling van deze verkeersgedraging geregeld?", antwoord: "De Wet administratiefrechtelijke handhaving verkeersvoorschriften (WAHV), ook wel de Wet Mulder genoemd." },
+      { vraag: "Op grond van welke wet zijn de bevoegdheden geregeld die je hiervoor kunt gebruiken?", antwoord: "De Algemene wet bestuursrecht (Awb)." },
+      { vraag: "Met welke 'pet' (hoedanigheid) treed je in deze situatie op?", antwoord: "Als toezichthouder." },
+      { vraag: "Is de fietser een verdachte of betrokkene?", antwoord: "De fietser is een betrokkene, omdat het gaat om een gedraging onder de Wet Mulder (WAHV)." },
+      { vraag: "Is de fietser verplicht om aan jouw vordering te voldoen?", antwoord: "Ja, op grond van artikel 5:16 van de Algemene wet bestuursrecht (Awb) ben je bevoegd om inlichtingen te vorderen en de betrokkene te laten stoppen en staande te houden." },
+      { vraag: "Op grond van welke wetgeving en welk artikel kun je van de fietser een identiteitsbewijs vorderen?", antwoord: "Op grond van artikel 5:16a Awb mag je een identiteitsbewijs vorderen. Bij weigering kan sprake zijn van een overtreding van artikel 447e Wetboek van Strafrecht." },
+      { vraag: "Wat moet je de fietser formeel mededelen voordat je een verklaring afneemt?", antwoord: "<ul><li>Voor welke feiten hij een aankondiging van beschikking krijgt</li><li>Dat hij niet tot antwoorden verplicht is</li><li>Dat hij recht heeft op consultatie- en verhoorbijstand (Salduz)</li></ul>" },
+      { vraag: "Welke gegevens zijn van belang om op de beschikking(en) te noteren?", antwoord: "<ul><li>Verwijzing naar de beschikking(en), inclusief proces-verbaalnummer(s)</li><li>Reden van wetenschap</li><li>Gedrag en uitlatingen van betrokkene</li><li>Eventuele relevante omstandigheden</li></ul>" },
+      { vraag: "Wat is het juridische gevolg van deze weigering?", antwoord: "Er ontstaat een verdenking van artikel 447e Wetboek van Strafrecht, waardoor betrokkene als verdachte kan worden aangemerkt en strafvorderlijke bevoegdheden kunnen worden toegepast." }
+    ];
     let huidig = 0;
-
     function laadVraag(index) {
-      const v = vragen[index];
+      const c = casussen[index]; const v = vragen[index];
+      document.getElementById('casus-titel').textContent = c.titel;
+      document.getElementById('casus-tekst').textContent = c.tekst;
       document.getElementById('vraag-tekst').textContent = v.vraag;
-      document.getElementById('vraag-nummer').textContent = `Vraag ${index + 1} van ${vragen.length}`;
-      document.getElementById('voortgang-tekst').textContent = `Vraag ${index + 1} van ${vragen.length}`;
-      document.getElementById('voortgang-balk').style.width = `${((index) / vragen.length) * 100}%`;
+      document.getElementById('vraag-nummer').textContent = 'Vraag ' + (index+1) + ' van ' + vragen.length;
+      document.getElementById('voortgang-tekst').textContent = 'Vraag ' + (index+1) + ' van ' + vragen.length;
+      document.getElementById('voortgang-balk').style.width = ((index/vragen.length)*100) + '%';
       document.getElementById('antwoord-input').value = '';
       document.getElementById('antwoord-input').disabled = false;
       document.getElementById('modelantwoord').classList.remove('zichtbaar');
@@ -265,7 +150,6 @@
       document.getElementById('knop-controleer').disabled = false;
       document.getElementById('knop-volgende').classList.remove('zichtbaar');
     }
-
     function controleer() {
       const v = vragen[huidig];
       document.getElementById('modelantwoord-tekst').innerHTML = v.antwoord;
@@ -273,7 +157,6 @@
       document.getElementById('antwoord-input').disabled = true;
       document.getElementById('knop-controleer').disabled = true;
       document.getElementById('modelantwoord').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-
       if (huidig < vragen.length - 1) {
         document.getElementById('knop-volgende').classList.add('zichtbaar');
       } else {
@@ -284,24 +167,9 @@
         }, 1800);
       }
     }
-
-    function volgende() {
-      huidig++;
-      laadVraag(huidig);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function herstart() {
-      huidig = 0;
-      document.getElementById('scherm-einde').classList.remove('actief');
-      document.getElementById('scherm-vraag').classList.add('actief');
-      laadVraag(0);
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    // Start
+    function volgende() { huidig++; laadVraag(huidig); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function herstart() { huidig = 0; document.getElementById('scherm-einde').classList.remove('actief'); document.getElementById('scherm-vraag').classList.add('actief'); laadVraag(0); window.scrollTo({ top: 0, behavior: 'smooth' }); }
     laadVraag(0);
   </script>
-
 </body>
 </html>
