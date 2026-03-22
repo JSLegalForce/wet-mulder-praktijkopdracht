@@ -52,19 +52,57 @@
     .knop-afronden { background: var(--groen); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; cursor: pointer; transition: background 0.2s, transform 0.1s; display: none; }
     .knop-afronden.zichtbaar { display: block; }
     .knop-afronden:hover { background: #155f39; }
+
+    /* EINDSCHERM */
     .eind-card { background: var(--wit); border-radius: var(--radius); box-shadow: var(--shadow); padding: 48px 36px; border-top: 4px solid var(--groen); width: 100%; text-align: center; }
     .eind-icoon { font-size: 3rem; margin-bottom: 16px; }
     .eind-titel { font-weight: 800; font-size: 1.8rem; color: var(--blauw); margin-bottom: 8px; }
-    .eind-tekst { font-size: 1rem; color: var(--tekst-mid); margin-bottom: 32px; line-height: 1.6; }
+    .eind-tekst { font-size: 1rem; color: var(--tekst-mid); margin-bottom: 36px; line-height: 1.6; max-width: 480px; margin-left: auto; margin-right: auto; }
     .eind-knoppen { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
-    .knop-opnieuw { background: transparent; color: var(--blauw); border: 2px solid var(--blauw); border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 13px 28px; cursor: pointer; transition: all 0.2s; }
+    .knop-opnieuw { background: transparent; color: var(--blauw); border: 2px solid var(--blauw); border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 13px 22px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; }
     .knop-opnieuw:hover { background: var(--blauw); color: var(--wit); }
-    .knop-sluiten { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px 28px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
+    .knop-sluiten { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 14px 22px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
     .knop-sluiten:hover { background: var(--blauw-mid); }
+    .knop-overzicht { background: linear-gradient(135deg, #1a4a3e, #1a7a4a); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 14px 22px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; box-shadow: 0 4px 16px rgba(26,122,74,0.3); }
+    .knop-overzicht:hover { transform: translateY(-2px); box-shadow: 0 6px 24px rgba(26,122,74,0.4); }
+    .knop-overzicht:active { transform: scale(0.98); }
+
+    /* OVERZICHTSCHERM */
+    .overzicht-card { background: var(--wit); border-radius: var(--radius); box-shadow: var(--shadow); padding: 36px; border-top: 4px solid var(--blauw); width: 100%; }
+    .overzicht-header { display: flex; align-items: center; justify-content: space-between; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+    .overzicht-titel { font-weight: 800; font-size: 1.5rem; color: var(--blauw); }
+    .overzicht-subtitle { font-size: 0.85rem; color: var(--tekst-mid); margin-top: 4px; }
+    .knop-terug { background: transparent; color: var(--blauw); border: 2px solid var(--blauw); border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.9rem; padding: 10px 20px; cursor: pointer; transition: all 0.2s; display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+    .knop-terug:hover { background: var(--blauw); color: var(--wit); }
+    .overzicht-item { border: 1px solid var(--grijs-mid); border-radius: 10px; overflow: hidden; margin-bottom: 20px; transition: box-shadow 0.2s; }
+    .overzicht-item:hover { box-shadow: 0 4px 20px rgba(26,42,94,0.1); }
+    .overzicht-item-header { background: var(--blauw); padding: 14px 20px; display: flex; align-items: center; gap: 12px; }
+    .overzicht-nr { background: rgba(255,255,255,0.15); color: var(--zilver); font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; padding: 4px 10px; border-radius: 4px; white-space: nowrap; }
+    .overzicht-vraag-tekst { font-family: 'Source Serif 4', serif; font-size: 0.9rem; color: rgba(255,255,255,0.9); line-height: 1.5; }
+    .overzicht-body { display: grid; grid-template-columns: 1fr 1fr; gap: 0; }
+    .overzicht-kolom { padding: 18px 20px; }
+    .overzicht-kolom-jouw { border-right: 1px solid var(--grijs-mid); background: #fafbff; }
+    .overzicht-kolom-model { background: #f5fbf7; }
+    .overzicht-kolom-label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 10px; display: flex; align-items: center; gap: 6px; }
+    .overzicht-kolom-jouw .overzicht-kolom-label { color: var(--blauw); }
+    .overzicht-kolom-model .overzicht-kolom-label { color: var(--groen); }
+    .overzicht-antwoord { font-size: 0.9rem; line-height: 1.65; color: var(--tekst); white-space: pre-wrap; }
+    .overzicht-antwoord.leeg { color: var(--zilver); font-style: italic; }
+    .overzicht-antwoord ul { padding-left: 16px; }
+    .overzicht-antwoord li { margin-bottom: 3px; color: #145c38; }
+    .divider-lijn { border: none; border-top: 1px solid var(--grijs-mid); margin: 0; }
+
     .scherm { display: none; width: 100%; }
     .scherm.actief { display: flex; flex-direction: column; align-items: center; }
     .quiz-footer { text-align: center; padding: 16px; font-size: 0.75rem; color: var(--tekst-mid); opacity: 0.6; }
-    @media (max-width: 560px) { .vraag-card { padding: 22px 18px; } .casus-card { padding: 18px 20px; } }
+    @media (max-width: 560px) {
+      .vraag-card { padding: 22px 18px; }
+      .casus-card { padding: 18px 20px; }
+      .overzicht-body { grid-template-columns: 1fr; }
+      .overzicht-kolom-jouw { border-right: none; border-bottom: 1px solid var(--grijs-mid); }
+      .eind-knoppen { flex-direction: column; }
+      .knop-opnieuw, .knop-sluiten, .knop-overzicht { justify-content: center; }
+    }
   </style>
 </head>
 <body>
@@ -81,6 +119,8 @@
     <p class="header-sub">Praktijkopdracht — Wet Mulder voor BOA's</p>
   </header>
   <main class="wrapper">
+
+    <!-- VRAAGSCHERM -->
     <div id="scherm-vraag" class="scherm actief">
       <div class="casus-card">
         <div class="casus-label">Casus</div>
@@ -106,19 +146,50 @@
         </div>
       </div>
     </div>
+
+    <!-- EINDSCHERM -->
     <div id="scherm-einde" class="scherm">
       <div class="eind-card">
         <div class="eind-icoon">🎓</div>
         <h2 class="eind-titel">Opdracht afgerond!</h2>
-        <p class="eind-tekst">Je hebt alle 10 vragen doorlopen en de modelantwoorden bekeken. Vergelijk je antwoorden met de modelantwoorden om te zien hoe je het hebt gedaan.</p>
+        <p class="eind-tekst">Je hebt alle 10 vragen doorlopen en de modelantwoorden bekeken. Bekijk het overzicht om jouw antwoorden te vergelijken met de modelantwoorden.</p>
         <div class="eind-knoppen">
-          <button class="knop-opnieuw" onclick="herstart()">Opnieuw beginnen</button>
-          <button class="knop-sluiten" onclick="window.close()">✕ Venster sluiten</button>
+          <button class="knop-opnieuw" onclick="herstart()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="1 4 1 10 7 10"></polyline><path d="M3.51 15a9 9 0 1 0 .49-3.5"></path></svg>
+            Opnieuw beginnen
+          </button>
+          <button class="knop-overzicht" onclick="toonOverzicht()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path><polyline points="14 2 14 8 20 8"></polyline><line x1="16" y1="13" x2="8" y2="13"></line><line x1="16" y1="17" x2="8" y2="17"></line><polyline points="10 9 9 9 8 9"></polyline></svg>
+            Bekijk mijn antwoorden
+          </button>
+          <button class="knop-sluiten" onclick="window.close()">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            Venster sluiten
+          </button>
         </div>
       </div>
     </div>
+
+    <!-- OVERZICHTSCHERM -->
+    <div id="scherm-overzicht" class="scherm">
+      <div class="overzicht-card">
+        <div class="overzicht-header">
+          <div>
+            <div class="overzicht-titel">Overzicht antwoorden</div>
+            <div class="overzicht-subtitle">Jouw antwoorden vergeleken met de modelantwoorden</div>
+          </div>
+          <button class="knop-terug" onclick="toonEinde()">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            Terug
+          </button>
+        </div>
+        <div id="overzicht-inhoud"></div>
+      </div>
+    </div>
+
   </main>
   <footer class="quiz-footer">© JS Legal Force — Praktijkopdracht Wet Mulder voor BOA's</footer>
+
   <script>
     const casussen = [
       { titel: "Casus 1", tekst: "Tijdens je surveillance in het winkelgebied neem je waar dat een fietser over het voetpad rijdt. Je besluit hiertegen op te treden." },
@@ -144,7 +215,10 @@
       { vraag: "Wat moet je de fietser formeel mededelen voordat je een verklaring afneemt?", antwoord: "<ul><li>Voor welke feiten hij een aankondiging van beschikking krijgt</li><li>Dat hij niet tot antwoorden verplicht is</li><li>Dat hij recht heeft op consultatie- en verhoorbijstand (Salduz)</li></ul>" },
       { vraag: "Welke gegevens zijn van belang om op de beschikking(en) te noteren?", antwoord: "<ul><li>Verwijzing naar de beschikking(en), inclusief proces-verbaalnummer(s)</li><li>Reden van wetenschap</li><li>Gedrag en uitlatingen van betrokkene</li><li>Eventuele relevante omstandigheden</li></ul>" }
     ];
+
     let huidig = 0;
+    const mijnAntwoorden = new Array(vragen.length).fill('');
+
     function laadVraag(i) {
       document.getElementById('casus-titel').textContent = casussen[i].titel;
       document.getElementById('casus-tekst').textContent = casussen[i].tekst;
@@ -160,18 +234,92 @@
       document.getElementById('knop-volgende').classList.remove('zichtbaar');
       document.getElementById('knop-afronden').classList.remove('zichtbaar');
     }
+
     function controleer() {
+      mijnAntwoorden[huidig] = document.getElementById('antwoord-input').value.trim();
       document.getElementById('modelantwoord-tekst').innerHTML = vragen[huidig].antwoord;
       document.getElementById('modelantwoord').classList.add('zichtbaar');
       document.getElementById('antwoord-input').disabled = true;
       document.getElementById('knop-controleer').disabled = true;
       document.getElementById('modelantwoord').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      if (huidig < vragen.length - 1) { document.getElementById('knop-volgende').classList.add('zichtbaar'); }
-      else { document.getElementById('knop-afronden').classList.add('zichtbaar'); document.getElementById('voortgang-balk').style.width = '100%'; }
+      if (huidig < vragen.length - 1) {
+        document.getElementById('knop-volgende').classList.add('zichtbaar');
+      } else {
+        document.getElementById('knop-afronden').classList.add('zichtbaar');
+        document.getElementById('voortgang-balk').style.width = '100%';
+      }
     }
-    function volgende() { huidig++; laadVraag(huidig); window.scrollTo({top:0,behavior:'smooth'}); }
-    function afronden() { document.getElementById('scherm-vraag').classList.remove('actief'); document.getElementById('scherm-einde').classList.add('actief'); window.scrollTo({top:0,behavior:'smooth'}); }
-    function herstart() { huidig=0; document.getElementById('scherm-einde').classList.remove('actief'); document.getElementById('scherm-vraag').classList.add('actief'); laadVraag(0); window.scrollTo({top:0,behavior:'smooth'}); }
+
+    function volgende() {
+      huidig++;
+      laadVraag(huidig);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function afronden() {
+      document.getElementById('scherm-vraag').classList.remove('actief');
+      document.getElementById('scherm-einde').classList.add('actief');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toonOverzicht() {
+      const inhoud = document.getElementById('overzicht-inhoud');
+      inhoud.innerHTML = '';
+      vragen.forEach((v, i) => {
+        const jouwAntwoord = mijnAntwoorden[i] || '';
+        const item = document.createElement('div');
+        item.className = 'overzicht-item';
+        item.innerHTML =
+          '<div class="overzicht-item-header">' +
+            '<span class="overzicht-nr">Vraag ' + (i+1) + '</span>' +
+            '<span class="overzicht-vraag-tekst">' + v.vraag + '</span>' +
+          '</div>' +
+          '<div class="overzicht-body">' +
+            '<div class="overzicht-kolom overzicht-kolom-jouw">' +
+              '<div class="overzicht-kolom-label">' +
+                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>' +
+                'Jouw antwoord' +
+              '</div>' +
+              '<div class="overzicht-antwoord' + (jouwAntwoord ? '' : ' leeg') + '">' +
+                (jouwAntwoord || 'Geen antwoord ingevuld') +
+              '</div>' +
+            '</div>' +
+            '<div class="overzicht-kolom overzicht-kolom-model">' +
+              '<div class="overzicht-kolom-label">' +
+                '<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>' +
+                'Modelantwoord' +
+              '</div>' +
+              '<div class="overzicht-antwoord">' + v.antwoord + '</div>' +
+            '</div>' +
+          '</div>';
+        inhoud.appendChild(item);
+        if (i < vragen.length - 1) {
+          const div = document.createElement('div');
+          div.style.height = '8px';
+          inhoud.appendChild(div);
+        }
+      });
+      document.getElementById('scherm-einde').classList.remove('actief');
+      document.getElementById('scherm-overzicht').classList.add('actief');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function toonEinde() {
+      document.getElementById('scherm-overzicht').classList.remove('actief');
+      document.getElementById('scherm-einde').classList.add('actief');
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
+    function herstart() {
+      huidig = 0;
+      mijnAntwoorden.fill('');
+      document.getElementById('scherm-einde').classList.remove('actief');
+      document.getElementById('scherm-overzicht').classList.remove('actief');
+      document.getElementById('scherm-vraag').classList.add('actief');
+      laadVraag(0);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    }
+
     laadVraag(0);
   </script>
 </body>
