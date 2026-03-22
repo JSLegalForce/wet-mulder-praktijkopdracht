@@ -52,7 +52,6 @@
     .knop-afronden { background: var(--groen); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 0.95rem; padding: 12px 24px; cursor: pointer; transition: background 0.2s, transform 0.1s; display: none; }
     .knop-afronden.zichtbaar { display: block; }
     .knop-afronden:hover { background: #155f39; }
-    .knop-afronden:active { transform: scale(0.98); }
     .eind-card { background: var(--wit); border-radius: var(--radius); box-shadow: var(--shadow); padding: 48px 36px; border-top: 4px solid var(--groen); width: 100%; text-align: center; }
     .eind-icoon { font-size: 3rem; margin-bottom: 16px; }
     .eind-titel { font-weight: 800; font-size: 1.8rem; color: var(--blauw); margin-bottom: 8px; }
@@ -60,7 +59,7 @@
     .eind-knoppen { display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; }
     .knop-opnieuw { background: transparent; color: var(--blauw); border: 2px solid var(--blauw); border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 13px 28px; cursor: pointer; transition: all 0.2s; }
     .knop-opnieuw:hover { background: var(--blauw); color: var(--wit); }
-    .knop-sluiten { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px 28px; cursor: pointer; transition: background 0.2s; display: flex; align-items: center; gap: 8px; }
+    .knop-sluiten { background: var(--blauw); color: var(--wit); border: none; border-radius: 8px; font-family: 'Outfit', sans-serif; font-weight: 700; font-size: 1rem; padding: 14px 28px; cursor: pointer; display: flex; align-items: center; gap: 8px; }
     .knop-sluiten:hover { background: var(--blauw-mid); }
     .scherm { display: none; width: 100%; }
     .scherm.actief { display: flex; flex-direction: column; align-items: center; }
@@ -111,13 +110,10 @@
       <div class="eind-card">
         <div class="eind-icoon">🎓</div>
         <h2 class="eind-titel">Opdracht afgerond!</h2>
-        <p class="eind-tekst">Je hebt alle 10 vragen van de praktijkopdracht doorlopen en de modelantwoorden bekeken. Vergelijk je eigen antwoorden met de modelantwoorden om te zien hoe je het hebt gedaan.</p>
+        <p class="eind-tekst">Je hebt alle 10 vragen doorlopen en de modelantwoorden bekeken. Vergelijk je antwoorden met de modelantwoorden om te zien hoe je het hebt gedaan.</p>
         <div class="eind-knoppen">
           <button class="knop-opnieuw" onclick="herstart()">Opnieuw beginnen</button>
-          <button class="knop-sluiten" onclick="window.close()">
-            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
-            Venster sluiten
-          </button>
+          <button class="knop-sluiten" onclick="window.close()">✕ Venster sluiten</button>
         </div>
       </div>
     </div>
@@ -132,9 +128,9 @@
       { titel: "Casus 5", tekst: "Je wilt de fietser op de fatbike stilhouden om hem een aankondiging van beschikking te geven voor het vasthouden van een mobiele telefoon tijdens het rijden." },
       { titel: "Casus 6", tekst: "Je spreekt de fietser op de fatbike, die tijdens het fietsen een mobiele telefoon in zijn hand vasthoudt, aan en vordert dat hij stopt." },
       { titel: "Casus 7", tekst: "De fietser voldoet aan jouw vordering en stopt." },
-      { titel: "Casus 8", tekst: "Je geeft de fietser een aankondiging van beschikking voor het vasthouden van een mobiele telefoon tijdens het fietsen." },
-      { titel: "Casus 9", tekst: "Je maakt de aankondiging van beschikking op in het systeem." },
-      { titel: "Casus 10", tekst: "De fietser weigert medewerking en toont geen identiteitsbewijs." }
+      { titel: "Casus 8", tekst: "De fietser weigert medewerking en toont geen identiteitsbewijs." },
+      { titel: "Casus 9", tekst: "Je geeft de fietser een aankondiging van beschikking voor het vasthouden van een mobiele telefoon tijdens het fietsen." },
+      { titel: "Casus 10", tekst: "Je maakt de aankondiging van beschikking op in het systeem." }
     ];
     const vragen = [
       { vraag: "In welke wet is deze gedraging strafbaar gesteld?", antwoord: "Het Reglement verkeersregels en verkeerstekens 1990 (RVV 1990)." },
@@ -144,19 +140,18 @@
       { vraag: "Is de fietser een verdachte of betrokkene?", antwoord: "De fietser is een betrokkene, omdat het gaat om een gedraging onder de Wet Mulder (WAHV)." },
       { vraag: "Is de fietser verplicht om aan jouw vordering te voldoen?", antwoord: "Ja, op grond van artikel 5:16 van de Algemene wet bestuursrecht (Awb) ben je bevoegd om inlichtingen te vorderen en de betrokkene te laten stoppen en staande te houden." },
       { vraag: "Op grond van welke wetgeving en welk artikel kun je van de fietser een identiteitsbewijs vorderen?", antwoord: "Op grond van artikel 5:16a Awb mag je een identiteitsbewijs vorderen. Bij weigering kan sprake zijn van een overtreding van artikel 447e Wetboek van Strafrecht." },
+      { vraag: "Wat is het juridische gevolg van deze weigering?", antwoord: "Er ontstaat een verdenking van artikel 447e Wetboek van Strafrecht, waardoor betrokkene als verdachte kan worden aangemerkt en strafvorderlijke bevoegdheden kunnen worden toegepast." },
       { vraag: "Wat moet je de fietser formeel mededelen voordat je een verklaring afneemt?", antwoord: "<ul><li>Voor welke feiten hij een aankondiging van beschikking krijgt</li><li>Dat hij niet tot antwoorden verplicht is</li><li>Dat hij recht heeft op consultatie- en verhoorbijstand (Salduz)</li></ul>" },
-      { vraag: "Welke gegevens zijn van belang om op de beschikking(en) te noteren?", antwoord: "<ul><li>Verwijzing naar de beschikking(en), inclusief proces-verbaalnummer(s)</li><li>Reden van wetenschap</li><li>Gedrag en uitlatingen van betrokkene</li><li>Eventuele relevante omstandigheden</li></ul>" },
-      { vraag: "Wat is het juridische gevolg van deze weigering?", antwoord: "Er ontstaat een verdenking van artikel 447e Wetboek van Strafrecht, waardoor betrokkene als verdachte kan worden aangemerkt en strafvorderlijke bevoegdheden kunnen worden toegepast." }
+      { vraag: "Welke gegevens zijn van belang om op de beschikking(en) te noteren?", antwoord: "<ul><li>Verwijzing naar de beschikking(en), inclusief proces-verbaalnummer(s)</li><li>Reden van wetenschap</li><li>Gedrag en uitlatingen van betrokkene</li><li>Eventuele relevante omstandigheden</li></ul>" }
     ];
     let huidig = 0;
-    function laadVraag(index) {
-      const c = casussen[index]; const v = vragen[index];
-      document.getElementById('casus-titel').textContent = c.titel;
-      document.getElementById('casus-tekst').textContent = c.tekst;
-      document.getElementById('vraag-tekst').textContent = v.vraag;
-      document.getElementById('vraag-nummer').textContent = 'Vraag ' + (index+1) + ' van ' + vragen.length;
-      document.getElementById('voortgang-tekst').textContent = 'Vraag ' + (index+1) + ' van ' + vragen.length;
-      document.getElementById('voortgang-balk').style.width = ((index/vragen.length)*100) + '%';
+    function laadVraag(i) {
+      document.getElementById('casus-titel').textContent = casussen[i].titel;
+      document.getElementById('casus-tekst').textContent = casussen[i].tekst;
+      document.getElementById('vraag-tekst').textContent = vragen[i].vraag;
+      document.getElementById('vraag-nummer').textContent = 'Vraag ' + (i+1) + ' van ' + vragen.length;
+      document.getElementById('voortgang-tekst').textContent = 'Vraag ' + (i+1) + ' van ' + vragen.length;
+      document.getElementById('voortgang-balk').style.width = ((i/vragen.length)*100) + '%';
       document.getElementById('antwoord-input').value = '';
       document.getElementById('antwoord-input').disabled = false;
       document.getElementById('modelantwoord').classList.remove('zichtbaar');
@@ -166,23 +161,18 @@
       document.getElementById('knop-afronden').classList.remove('zichtbaar');
     }
     function controleer() {
-      const v = vragen[huidig];
-      document.getElementById('modelantwoord-tekst').innerHTML = v.antwoord;
+      document.getElementById('modelantwoord-tekst').innerHTML = vragen[huidig].antwoord;
       document.getElementById('modelantwoord').classList.add('zichtbaar');
       document.getElementById('antwoord-input').disabled = true;
       document.getElementById('knop-controleer').disabled = true;
       document.getElementById('modelantwoord').scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-      if (huidig < vragen.length - 1) {
-        document.getElementById('knop-volgende').classList.add('zichtbaar');
-      } else {
-        document.getElementById('knop-afronden').classList.add('zichtbaar');
-        document.getElementById('voortgang-balk').style.width = '100%';
-      }
+      if (huidig < vragen.length - 1) { document.getElementById('knop-volgende').classList.add('zichtbaar'); }
+      else { document.getElementById('knop-afronden').classList.add('zichtbaar'); document.getElementById('voortgang-balk').style.width = '100%'; }
     }
-    function volgende() { huidig++; laadVraag(huidig); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    function afronden() { document.getElementById('scherm-vraag').classList.remove('actief'); document.getElementById('scherm-einde').classList.add('actief'); window.scrollTo({ top: 0, behavior: 'smooth' }); }
-    function herstart() { huidig = 0; document.getElementById('scherm-einde').classList.remove('actief'); document.getElementById('scherm-vraag').classList.add('actief'); laadVraag(0); window.scrollTo({ top: 0, behavior: 'smooth' }); }
+    function volgende() { huidig++; laadVraag(huidig); window.scrollTo({top:0,behavior:'smooth'}); }
+    function afronden() { document.getElementById('scherm-vraag').classList.remove('actief'); document.getElementById('scherm-einde').classList.add('actief'); window.scrollTo({top:0,behavior:'smooth'}); }
+    function herstart() { huidig=0; document.getElementById('scherm-einde').classList.remove('actief'); document.getElementById('scherm-vraag').classList.add('actief'); laadVraag(0); window.scrollTo({top:0,behavior:'smooth'}); }
     laadVraag(0);
   </script>
 </body>
-  </html>
+</html>
